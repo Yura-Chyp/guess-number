@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+   *{
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body{
+       background-color:black;
+   }
+
+    .wrap{
+        width:100%;
+        height:100vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .btn_start{
+        width:200px;
+        height: 50px;
+        margin-top: 150px;
+        margin-bottom:-190px;
+        border-radius: 50px;
+        border:none;
+        background-color:white;
+        font-size:30px;
+        color:black;
+        font-family: monospace;
+        cursor: pointer;
+    }
+
+
+
+    .txt{
+        font-size:50px;
+        font-family: monospace;
+        color:white;
+    }
+
+    .help{
+       width:300px;
+       height:300px;
+       background-color:white;
+       border-radius:10px;
+       margin-bottom: 20px;
+    }
+    .nuber{
+       width:300px;
+       height:300px;
+       display: flex;
+       justify-content: center;
+       flex-direction:column;
+       align-items: center;
+       background-color:white;
+       border-radius:10px;
+       margin-bottom:20px;
+    }
+    h3{
+        margin-top:5px;
+    }
+    .menu{
+       width:300px;
+       height:300px;
+       border-radius:10px;
+       display: flex;
+align-items: center;
+       flex-direction: column;
+       background-color:white;
+    }
+    .buton{
+        margin-top:90px;
+    }
+    img{
+        width:80px;
+        height: 80px;
+    }
+    .wrap1{
+        width:100%;
+        height: 100vh;
+        display:none;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width:100%;
+        height: 500px;
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        flex-direction: row;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    .wed {
+        border-radius:20px;
+  position: relative;
+  background-color: #04AA6D;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.wed:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.wed:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.navber{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.num{
+height:40px;
+margin-right: 10px;
+border-radius: 25px;
+border:none;
+}
+
+.chp{
+    font-size:40px;
+}
+.nub{
+    font-size:40px;
+}
+
+.kkk{
+    margin-top:10px;
+    margin-bottom:-50px;
+    font-size: 30px;
+}
+.helps{
+    font-size:20px;
+    font-weight:900;
+}
+.settings{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.9);
+}
+.settNum{
+    width:300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+    border-radius:20px;
+    background-color: #FFFFFF;
+}
+#Num1{
+    width:100px;
+    height:40px;
+    color: white;
+    background-color: black;
+    border:none;
+    border-radius:10px;    
+}
+#Num2{
+    width:100px;
+    height:40px;
+    color: white;
+    background-color: black;
+    border:none;
+    border-radius:10px;    
+}
+#Num3{
+    width:100px;
+    height:40px;
+    color: white;
+    background-color: black;
+    border:none;
+    border-radius:10px;    
+}
+    </style>
+
+</head>
+<body>
+
+
+
+     <div class="wrap" id="wrap">
+         <div class="mova" id="mova">
+             <div class="ua" id="ua"></div>
+             <div class="en" id="en"></div>
+         </div>
+      <div class="txt" id="txt">
+      <h1>Відгадай число</h1>
+      </div>
+          <button class="btn_start" id="star">
+            грати
+          </button>
+     </div>
+
+     <div class="wrap1" id="wrap1">
+      <div class="card" id="card">
+        <div class="help" id="help">
+            <h4 class="chp" id="pashalka1">Підказки:</h4>
+            <div class="helps" id="helps">
+
+            </div>
+        </div>
+        <div class="nuber" id="numer">
+            <div class="nub" id="nub">
+
+            </div>
+            <h5 class="kkk" id="pashalka2">загадане число</h5>
+        </div>
+        <div class="menu" id="menu">
+             <h3 id="pashalka3">Меню</h3>
+            <div class="buton" id="buton">
+                <img src="home.png" alt="home" id="home">
+                <img src="setting.png" alt="setting" id="set">
+            </div>
+        </div>
+      </div>
+      
+      <div class="navber" id="navber">
+        <input type="number" class="num" id="num">
+        <button class="wed" id="wed">?</button>
+      </div>
+
+     </div>
+     <div class="settings" id="settin">
+        <div class="settNum" id="settNum">
+            <button id="Num1">to 50</button>
+            <button id="Num2">to 100</button>
+            <button id="Num3">to 500</button>
+        </div>
+     </div>
+
+    <script>
+        let secret;
+
+    star.onclick = function(){
+        settin.style.display = 'flex';
+    }
+    Num1.onclick = () =>{
+        let secret = Math.floor(Math.random()*50);
+              console.log(secret);
+             nub.innerText = 'x';
+      wrap.style.display = 'none';
+      settin.style.display = 'none';
+      wrap1.style.display = 'flex';
+      wed.onclick = () =>{
+            let current = num.value;
+            num.value = '';
+            
+            if(current==secret){
+                 nub.innerText = secret;
+                 alert('you win');
+                 
+            }else if(current>secret){
+                helps.innerText='загадане число менше'
+            }
+            else if(current<secret){
+                helps.innerText='загадане число більше'
+            }
+        }
+        
+    }
+    Num2.onclick =()=>{
+        let secret = Math.floor(Math.random()*100);
+              console.log(secret);
+              wrap.style.display = 'none';
+      settin.style.display = 'none';
+      wrap1.style.display = 'flex';
+      wed.onclick = () =>{
+            let current = num.value;
+            num.value = '';
+            
+            if(current==secret){
+                 nub.innerText = secret;
+                
+                 
+            }else if(current>secret){
+                helps.innerText='загадане число менше'
+            }
+            else if(current<secret){
+                helps.innerText='загадане число більше'
+            }
+        }
+    }
+    Num3.onclick =() =>{
+        let secret = Math.floor(Math.random()*500);
+              console.log(secret);
+              wrap.style.display = 'none';
+      settin.style.display = 'none';
+      wrap1.style.display = 'flex';
+      wed.onclick = () =>{
+            let current = num.value;
+            num.value = '';
+            
+            if(current==secret){
+                 nub.innerText = secret;
+                 alert('you win');
+                 
+            }else if(current>secret){
+                helps.innerText='загадане число менше'
+            }
+            else if(current<secret){
+                helps.innerText='загадане число більше'
+            }
+        }
+    }
+
+    
+  
+
+
+        home.onclick = () =>{
+            wrap.style.display='flex';
+            wrap1.style.display = 'none'
+        }
+            pashalka1.onclick = () =>{
+                alert('одна з моїх любимих ігор Clash Royl');
+            }
+            pashalka2.onclick = () =>{
+                alert('одна з моїх любимих ігор Undertale');
+            }
+            pashalka3.onclick = () =>{
+                alert('одна з моїх любимих ігор FNAF 1-9');
+            }
+   
+    </script>
+</body>
+</html>
